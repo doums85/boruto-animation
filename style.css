@@ -1,0 +1,103 @@
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    background: #302f2f;
+    /*  background: rgb(255, 255, 255); */
+}
+
+.card {
+    /*
+    Clamp function 👇
+    400px => min width
+    50% => ideal width
+    700px => max width
+    */
+    width: clamp(320px, 50%, 700px);
+    height: clamp(60vh, 80%, 80vh);
+    background: center/cover no-repeat url(/images/boruto.png);
+    border-radius: 10px;
+    box-shadow:
+        6.7px 6.7px 5.3px rgba(255, 255, 255, 0.058),
+        22.3px 22.3px 17.9px rgba(255, 255, 255, 0.082);
+}
+
+
+.rain {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: url(/images/rain.png);
+    border-radius: 10px;
+    animation: rain 0.5s linear infinite;
+}
+
+.rain:before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    border-radius: 10px;
+    animation: lighting 5s linear infinite;
+    opacity: 0;
+}
+
+a{
+    position: absolute;
+    bottom: 20px;
+    color: #fff;
+}
+/* ANIMATION */
+
+@keyframes rain {
+    0% {
+        background-position: 0% 0%;
+    }
+
+    100% {
+        background-position: 20% 100%;
+    }
+}
+
+
+@keyframes lighting {
+    0% {
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 0;
+    }
+
+    11% {
+        opacity: 1;
+    }
+
+    14% {
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 0;
+    }
+
+    21% {
+        opacity: 1;
+    }
+
+
+    24% {
+        opacity: 0;
+    }
+
+
+    104% {
+        opacity: 1;
+    }
+}
